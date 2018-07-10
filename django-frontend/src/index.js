@@ -1,16 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { BrowserRouter, Route } from 'react-router-dom';
 
+import { injectGlobal } from 'styled-components';
+import reset from 'styled-reset';
+
+import Root from './Root';
 import App from './components/App';
-import reducers from './reducers';
+import Signin from './components/Auth/Signin';
+import Signup from './components/Auth/Signup';
+import Main from './components/Main';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+injectGlobal`
+    ${reset};
+`
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
+  <Root>
+    <BrowserRouter>
+      <App>
+        <Route path='/' exact component={Main} />
+        <Route path='/signin' component={Signin} />
+        <Route path='/signup' component={Signup} />
+      </App>
+    </BrowserRouter>
+  </Root>
 , document.getElementById('root'));
 
