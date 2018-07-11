@@ -10,6 +10,7 @@ import App from './components/App';
 import Signin from './components/Auth/Signin';
 import Signup from './components/Auth/Signup';
 import Main from './components/Main';
+import NotesList from './components/NotesList';
 
 injectGlobal`
     ${reset};
@@ -22,6 +23,7 @@ ReactDOM.render(
         <Route path='/' exact component={Main} />
         <Route path='/signin' component={Signin} />
         <Route path='/signup' component={Signup} />
+        <Route path='/notes' component={NotesList} />
       </App>
     </BrowserRouter>
   </Root>

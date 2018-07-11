@@ -1,30 +1,35 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-
-// import { TestWrapper } from '../primitives/Primitives';
+import { SignUpWrapper, FieldWrapper, ButtonWrapper, Button, Label, Title } from '../primitives/Primitives';
+import { withRouter } from 'react-router';
 
 let Signup = props => {
     const { handleSubmit } = props
 
+    const notesRoute = () => {
+        props.history.push(`/notes`);
+    }
         return (
-            <div>
-                <h1>SIGN-UP</h1><hr/>
+            <SignUpWrapper>
+                <Title>SIGN-UP</Title>
                 <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="email">Email</label>
+                    <FieldWrapper>
+                        <Label htmlFor="email">Email</Label>
                         <Field name="email" component="input" type="email" />
-                    </div> 
-                    <div>
-                        <label htmlFor="password">Password</label>
+                    </FieldWrapper> 
+                    <FieldWrapper>
+                        <Label htmlFor="password">Password</Label>
                         <Field name="password" component="input" type="text" />
-                    </div>
-                    <div>
-                        <label htmlFor="repassword">Re-enter Password</label>
+                    </FieldWrapper>
+                    <FieldWrapper>
+                        <Label htmlFor="repassword">Re-enter Password</Label>
                         <Field name="repassword" component="input" type="text" />
-                    </div>  
-                    <button type="submit">Sign Up</button>   
+                    </FieldWrapper>  
+                    <ButtonWrapper>
+                        <Button type="submit" onClick={()=> notesRoute()} className="hvr-radial-out hvr-bounce-in">Sign Up</Button>
+                    </ButtonWrapper>   
                 </form>
-            </div>
+            </SignUpWrapper>
         );
 }
 
@@ -32,4 +37,4 @@ Signup = reduxForm({
     form: 'signup'
 })(Signup)
 
-export default Signup;
+export default withRouter(Signup);

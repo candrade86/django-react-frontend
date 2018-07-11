@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { AppWrapper } from './primitives/Primitives';
 
 export default ({ children }) => {
   return (
-    <div>
+    <AppWrapper>
       {children}
-    </div>
+    </AppWrapper>
   );
 };
 
