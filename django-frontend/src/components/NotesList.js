@@ -3,12 +3,18 @@ import { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getNotes } from '../actions';
 
-class NotesList extends Component {
+import { Title } from './primitives/Primitives'
 
+class NotesList extends Component {
+   componentDidMount() {
+       this.props.getNotes()
+       console.log(this.props)
+   }
 render(){
     return (
         <div>
-        {console.log(this.props.notes)}
+            <Title> I need a connection!! </Title>
+        {console.log(this.props)}
         {this.props.notes.map((note, i) => {
             return (
                 <Fragment key={i}>
