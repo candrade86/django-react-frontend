@@ -11,7 +11,7 @@ export const getNotes = () => dispatch => {
     dispatch({ type: GETTING });
 
     axios
-        .get('https://cryptic-crag-26999.herokuapp.com/api/notes')
+        .get('https://cryptic-crag-26999.herokuapp.com/api/notes/')
         .then(res => {
             dispatch({ type: GOT, notes: res.data })
         })

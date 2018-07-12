@@ -71,3 +71,39 @@ export const SignUpWrapper = styled.div`
     height: 100%;
 `
 
+export const NotesListWrapper = styled.div`
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+`
+export const NoteWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+`
+export const Text = styled.div`
+    font-size: 1rem;
+    color: white;
+    padding: 2px;
+`
+export const NoteCardWrapper = styled.div`
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   
+`
+
+export const NoteTitle = styled.label`
+    color: white;
+`
+
+export const  HeaderWrapper = styled.nav`
+    position: top;
+    top: 0;
+    width: 100%;
+    padding: 5px;
+`

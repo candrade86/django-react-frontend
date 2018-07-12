@@ -4,7 +4,6 @@ import { withRouter} from 'react-router';
 import { MainWrapper, ButtonMainWrapper, Button } from './primitives/Primitives' 
 import './primitives/animations.css'
 import axios from 'axios';
-axios.defaults.withCredentials = true;
 
 class Main extends Component {
     signInRoute() {
@@ -13,12 +12,6 @@ class Main extends Component {
 
     signUpRoute() {
         this.props.history.push(`/signup`);
-    }
-
-    componentDidMount() {
-        axios
-        .get('https://cryptic-crag-26999.herokuapp.com/api/notes')
-        .then(res=> console.log(res))
     }
 
     render(){
